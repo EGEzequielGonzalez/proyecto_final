@@ -1,3 +1,99 @@
 body {
+    font-family: "Montserrat", sans-serif;
     background-color: #e6e7e8;
+}
+
+// Títulos principales
+h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+// Textos generales
+p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+// Textos secundarios
+.texto-secundario {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+// Botones
+button,
+.btn {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bienvenida {
+    text-align: left;
+    padding: 20px 12px;
+    width: fit-content;
+    margin: 0 auto;
+
+    h1 {
+        color: #0A0062;
+        white-space: nowrap;
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 1.2;
+
+        span {
+            color: #a9db29;
+        }
+    }
+
+    .bienvenida-acento {
+        width: 75px;
+        height: 5px;
+        background-color: #a9db29;
+        border-radius: 10px;
+        margin: 12px 0;
+    }
+
+    p {
+        color: #0A0062;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bienvenida {
+        padding: 35px 12px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .bienvenida-acento {
+            width: 110px;
+            height: 7px;
+            margin: 16px 0;
+        }
+
+        p {
+            font-size: 24px;
+        }
+    }
 }

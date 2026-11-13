@@ -1,9 +1,14 @@
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
 body {
-    font-family: "Montserrat", sans-serif;
-    background-color: #e6e7e8;
+    font-family: v.$fuente-principal;
+    background-color: v.$gris-fondo;
+    color: v.$azul-principal;
 }
 
-// Títulos principales
+// Títulos generales
 h1 {
     font-size: 26px;
     font-weight: 700;
@@ -24,13 +29,13 @@ h4 {
     font-weight: 600;
 }
 
-// Textos generales
+// Textos
 p {
     font-size: 14px;
     font-weight: 400;
+    line-height: 1.5;
 }
 
-// Textos secundarios
 .texto-secundario {
     font-size: 12px;
     font-weight: 400;
@@ -39,11 +44,12 @@ p {
 // Botones
 button,
 .btn {
-    font-family: "Montserrat", sans-serif;
+    font-family: v.$fuente-principal;
     font-size: 14px;
     font-weight: 600;
 }
 
+// Bienvenida del inicio
 .bienvenida {
     text-align: left;
     padding: 20px 12px;
@@ -51,34 +57,34 @@ button,
     margin: 0 auto;
 
     h1 {
-        color: #0A0062;
+        color: v.$azul-principal;
         white-space: nowrap;
         font-size: 20px;
         font-weight: 800;
         line-height: 1.2;
 
         span {
-            color: #a9db29;
+            color: v.$verde-principal;
         }
     }
 
     .bienvenida-acento {
         width: 75px;
         height: 5px;
-        background-color: #a9db29;
+        background-color: v.$verde-principal;
         border-radius: 10px;
         margin: 12px 0;
     }
 
     p {
-        color: #0A0062;
+        color: v.$azul-principal;
         font-size: 18px;
         font-weight: 600;
         margin: 0;
     }
 }
 
-@media (min-width: 1024px) {
+@include m.desktop {
     .bienvenida {
         padding: 35px 12px;
 

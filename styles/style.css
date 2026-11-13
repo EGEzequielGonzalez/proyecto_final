@@ -1,6 +1,81 @@
+.pagina-nosotros .nosotros-presentacion .nosotros-presentacion-contenido, .pagina-nosotros .nosotros-especializacion .nosotros-seccion-contenido, .pagina-nosotros .nosotros-metodologia .nosotros-metodologia-contenido, .pagina-nosotros .nosotros-canales .nosotros-canales-contenido, .pagina-nosotros .nosotros-ecosistema .nosotros-ecosistema-contenido, .pagina-nosotros .nosotros-cierre .nosotros-cierre-contenido, .pagina-productos .presentacion-productos .presentacion-productos-contenido, .pagina-productos .info-construccion-seco .info-construccion-seco-contenido, .pagina-productos .sistemas-eficientes .sistemas-eficientes-contenido {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.diferenciales h2 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pagina-productos .catalogo-productos .producto-card, .productos-destacados .producto-card {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pagina-nosotros .nosotros-canales .nosotros-canal {
+  transition: all 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #e6e7e8;
+  color: #0A0062;
 }
 
 h1 {
@@ -26,6 +101,7 @@ h4 {
 p {
   font-size: 14px;
   font-weight: 400;
+  line-height: 1.5;
 }
 
 .texto-secundario {
@@ -87,7 +163,7 @@ button,
   }
 }
 .header {
-  background-color: #0a0062;
+  background-color: #0A0062;
 }
 .header .container-fluid {
   display: flex;
@@ -128,10 +204,6 @@ button,
   padding: 10px 14px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.header .navbar-nav .nav-link:hover {
-  background-color: rgba(169, 219, 41, 0.18);
-  color: #a9db29;
-}
 .header .navbar-nav .nav-link.active {
   background-color: rgba(169, 219, 41, 0.12);
   color: #a9db29;
@@ -149,6 +221,7 @@ button,
   .header .container-fluid {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0 24px;
   }
   .header .header-top {
@@ -173,6 +246,15 @@ button,
     color: #a9db29;
   }
 }
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+section {
+  scroll-margin-top: 20px;
+}
+
 .footer {
   margin-top: 30px;
   background-color: #0A0062;
@@ -192,12 +274,12 @@ button,
 }
 .footer .footer-columna h3 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 .footer .footer-columna h4 {
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 5px;
 }
 .footer .footer-columna p {
@@ -212,6 +294,7 @@ button,
 }
 .footer .footer-item {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 5px;
   margin-bottom: 8px;
@@ -224,24 +307,38 @@ button,
 }
 .footer .footer-redes {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
   gap: 5px;
+  flex-wrap: wrap;
 }
 .footer .footer-redes img {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
+.footer .footer-redes a {
+  transition: transform 0.3s ease;
+}
+.footer .footer-redes a:hover {
+  transform: translateY(-3px);
+}
 
 .btn-primary {
   background-color: #a9db29;
   border-color: #a9db29;
   color: #fff;
+  transition: all 0.3s ease;
 }
 .btn-primary:hover {
   background-color: rgb(56.3902745098%, 73.5824313725%, 12.3783529412%);
   border-color: rgb(56.3902745098%, 73.5824313725%, 12.3783529412%);
   color: #0A0062;
+}
+.btn-primary:focus-visible {
+  outline: 3px solid #0A0062;
+  outline-offset: 3px;
+  box-shadow: none;
 }
 
 .diferenciales {
@@ -311,7 +408,6 @@ button,
   .diferenciales .diferenciales-contenedor {
     max-width: 700px;
     min-height: auto;
-    margin: 0 auto;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -346,15 +442,12 @@ button,
 .productos-destacados .productos-contenedor {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
   gap: 10px;
+  justify-items: center;
 }
 .productos-destacados .producto-card {
   width: 100%;
   max-width: 350px;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
 }
 .productos-destacados .producto-card .card-img-top {
   height: 200px;
@@ -392,6 +485,617 @@ button,
   }
   .productos-destacados .card-img-top {
     height: 180px;
+  }
+}
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+.carousel .carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.carousel .carousel-indicators {
+  margin-bottom: 8px;
+}
+.carousel .carousel-indicators button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 0;
+}
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  width: 10%;
+  opacity: 0.9;
+}
+.carousel .flecha-carrusel {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .carousel .flecha-carrusel {
+    width: 32px;
+    height: 32px;
+  }
+}
+.pagina-productos {
+  width: 100%;
+}
+.pagina-productos .presentacion-productos {
+  padding: 35px 15px;
+  text-align: center;
+}
+.pagina-productos .presentacion-productos .presentacion-productos-contenido {
+  max-width: 800px;
+}
+.pagina-productos .presentacion-productos h1 {
+  color: #0A0062;
+  font-size: 26px;
+  font-weight: 800;
+}
+.pagina-productos .presentacion-productos .presentacion-acento {
+  width: 75px;
+  height: 5px;
+  background-color: #a9db29;
+  border-radius: 10px;
+  margin: 12px auto;
+}
+.pagina-productos .presentacion-productos p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #555;
+}
+.pagina-productos .catalogo-productos {
+  background-color: #0A0062;
+  padding: 25px 12px;
+  margin: 0 auto;
+  max-width: 1200px;
+  border-radius: 15px;
+}
+.pagina-productos .catalogo-productos h2 {
+  color: #a9db29;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.pagina-productos .catalogo-productos .catalogo-productos-contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  justify-items: center;
+}
+.pagina-productos .catalogo-productos .producto-card {
+  width: 100%;
+  max-width: 350px;
+}
+.pagina-productos .catalogo-productos .producto-card .card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: 8px;
+}
+.pagina-productos .catalogo-productos .producto-card .card-body {
+  padding: 15px;
+}
+.pagina-productos .catalogo-productos .producto-card .card-title {
+  color: #0A0062;
+  font-size: 18px;
+  font-weight: 700;
+}
+.pagina-productos .catalogo-productos .producto-card .card-text {
+  color: #555;
+}
+.pagina-productos .info-construccion-seco {
+  padding: 35px 15px;
+}
+.pagina-productos .info-construccion-seco .info-construccion-seco-contenido {
+  max-width: 1000px;
+  background-color: #fff;
+  padding: 22px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.pagina-productos .info-construccion-seco h2 {
+  color: #0A0062;
+  margin-bottom: 15px;
+}
+.pagina-productos .info-construccion-seco h3 {
+  color: #0A0062;
+  margin: 20px 0 10px;
+}
+.pagina-productos .info-construccion-seco p,
+.pagina-productos .info-construccion-seco li {
+  color: #555;
+}
+.pagina-productos .info-construccion-seco ul {
+  padding-left: 20px;
+}
+.pagina-productos .info-construccion-seco li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.pagina-productos .sistemas-eficientes {
+  padding: 25px 15px 40px;
+}
+.pagina-productos .sistemas-eficientes .sistemas-eficientes-contenido {
+  max-width: 1100px;
+}
+.pagina-productos .sistemas-eficientes h2 {
+  color: #0A0062;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.pagina-productos .sistemas-eficientes > .sistemas-eficientes-contenido > p {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  text-align: center;
+  color: #555;
+}
+.pagina-productos .sistemas-eficientes .sistemas-eficientes-beneficios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.pagina-productos .sistemas-eficientes .sistema-beneficio {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #a9db29;
+}
+.pagina-productos .sistemas-eficientes .sistema-beneficio h3 {
+  color: #0A0062;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.pagina-productos .sistemas-eficientes .sistema-beneficio p {
+  color: #555;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .pagina-productos .presentacion-productos {
+    padding: 45px 20px;
+  }
+  .pagina-productos .presentacion-productos h1 {
+    font-size: 32px;
+  }
+  .pagina-productos .catalogo-productos {
+    padding: 30px;
+  }
+  .pagina-productos .catalogo-productos .catalogo-productos-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .pagina-productos .catalogo-productos .producto-card {
+    max-width: 100%;
+  }
+  .pagina-productos .info-construccion-seco .info-construccion-seco-contenido {
+    padding: 30px;
+  }
+  .pagina-productos .sistemas-eficientes .sistemas-eficientes-beneficios {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .pagina-productos .presentacion-productos {
+    padding: 55px 20px;
+  }
+  .pagina-productos .presentacion-productos h1 {
+    font-size: 40px;
+  }
+  .pagina-productos .presentacion-productos p {
+    font-size: 16px;
+  }
+  .pagina-productos .catalogo-productos .catalogo-productos-contenedor {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .pagina-productos .catalogo-productos .producto-card .card-img-top {
+    height: 190px;
+  }
+  .pagina-productos .info-construccion-seco .info-construccion-seco-contenido {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 35px;
+    align-items: start;
+  }
+  .pagina-productos .info-construccion-seco h3 {
+    margin-top: 0;
+  }
+  .pagina-productos .sistemas-eficientes .sistemas-eficientes-beneficios {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.pagina-nosotros {
+  width: 100%;
+}
+.pagina-nosotros .nosotros-etiqueta {
+  display: inline-block;
+  color: #0A0062;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+}
+.pagina-nosotros .nosotros-presentacion {
+  padding: 45px 15px;
+  text-align: center;
+}
+.pagina-nosotros .nosotros-presentacion .nosotros-presentacion-contenido {
+  max-width: 850px;
+}
+.pagina-nosotros .nosotros-presentacion h1 {
+  color: #0A0062;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.pagina-nosotros .nosotros-presentacion .nosotros-acento {
+  width: 75px;
+  height: 5px;
+  background-color: #a9db29;
+  border-radius: 10px;
+  margin: 15px auto;
+}
+.pagina-nosotros .nosotros-presentacion p {
+  color: #555;
+  max-width: 750px;
+  margin: 0 auto 12px;
+}
+.pagina-nosotros .nosotros-presentacion .nosotros-destacado {
+  color: #0A0062;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.pagina-nosotros .nosotros-especializacion {
+  background-color: #0A0062;
+  padding: 35px 15px;
+  color: #fff;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-seccion-contenido {
+  max-width: 1100px;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-seccion-titulo {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 25px;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-seccion-titulo h2 {
+  color: #a9db29;
+  margin-bottom: 12px;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-seccion-titulo p {
+  color: #fff;
+  margin: 0;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-areas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-area {
+  background-color: #fff;
+  color: #0A0062;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 190px;
+  border-top: 5px solid #a9db29;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-area .nosotros-area-numero {
+  color: #a9db29;
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-area h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-area p {
+  color: #555;
+  margin: 0;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-frase {
+  text-align: center;
+  margin-top: 30px;
+}
+.pagina-nosotros .nosotros-especializacion .nosotros-frase p {
+  color: #a9db29;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+}
+.pagina-nosotros .nosotros-metodologia {
+  padding: 40px 15px;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-metodologia-contenido {
+  max-width: 1050px;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-metodologia-texto {
+  margin-bottom: 25px;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-metodologia-texto h2 {
+  color: #0A0062;
+  margin-bottom: 15px;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-metodologia-texto p {
+  color: #555;
+  margin: 0;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-pasos {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-paso {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 17px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-paso > span {
+  color: #0A0062;
+  background-color: #a9db29;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-paso h3 {
+  color: #0A0062;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.pagina-nosotros .nosotros-metodologia .nosotros-paso p {
+  color: #555;
+  margin: 0;
+}
+.pagina-nosotros .nosotros-canales {
+  background-color: #fff;
+  padding: 40px 15px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canales-contenido {
+  max-width: 1100px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-seccion-titulo {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 25px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-seccion-titulo h2 {
+  color: #0A0062;
+  margin-bottom: 12px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-seccion-titulo p {
+  color: #555;
+  margin: 0;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canales-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canal {
+  text-align: center;
+  padding: 20px 15px;
+  border: 1px solid rgba(10, 0, 98, 0.1);
+  border-radius: 10px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.pagina-nosotros .nosotros-canales .nosotros-canal .nosotros-canal-icono {
+  width: 55px;
+  height: 55px;
+  background-color: #0A0062;
+  color: #a9db29;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canal .nosotros-canal-icono span {
+  font-size: 16px;
+  font-weight: 800;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canal h3 {
+  color: #0A0062;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canal p {
+  color: #555;
+  margin: 0;
+}
+.pagina-nosotros .nosotros-canales .nosotros-canales-cierre {
+  text-align: center;
+  color: #0A0062;
+  font-weight: 800;
+  font-size: 18px;
+  margin: 25px 0 0;
+}
+.pagina-nosotros .nosotros-ecosistema {
+  padding: 40px 15px;
+}
+.pagina-nosotros .nosotros-ecosistema .nosotros-ecosistema-contenido {
+  max-width: 850px;
+  background-color: #0A0062;
+  color: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.pagina-nosotros .nosotros-ecosistema .nosotros-etiqueta {
+  color: #a9db29;
+}
+.pagina-nosotros .nosotros-ecosistema h2 {
+  color: #a9db29;
+  margin-bottom: 15px;
+}
+.pagina-nosotros .nosotros-ecosistema p {
+  color: #fff;
+  margin-bottom: 12px;
+}
+.pagina-nosotros .nosotros-ecosistema p:last-child {
+  margin-bottom: 0;
+}
+.pagina-nosotros .nosotros-cierre {
+  background-color: #fff;
+  padding: 40px 15px;
+  text-align: center;
+}
+.pagina-nosotros .nosotros-cierre .nosotros-cierre-contenido {
+  max-width: 800px;
+}
+.pagina-nosotros .nosotros-cierre h2 {
+  color: #0A0062;
+  margin-bottom: 15px;
+}
+.pagina-nosotros .nosotros-cierre p {
+  color: #555;
+  margin-bottom: 12px;
+}
+.pagina-nosotros .nosotros-cierre .btn {
+  margin-top: 12px;
+  padding: 10px 22px;
+}
+
+@media (min-width: 768px) {
+  .pagina-nosotros .nosotros-presentacion {
+    padding: 55px 25px;
+  }
+  .pagina-nosotros .nosotros-presentacion h1 {
+    font-size: 34px;
+  }
+  .pagina-nosotros .nosotros-especializacion {
+    padding: 45px 25px;
+  }
+  .pagina-nosotros .nosotros-especializacion .nosotros-areas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .pagina-nosotros .nosotros-metodologia {
+    padding: 50px 25px;
+  }
+  .pagina-nosotros .nosotros-canales {
+    padding: 50px 25px;
+  }
+  .pagina-nosotros .nosotros-canales .nosotros-canales-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .pagina-nosotros .nosotros-ecosistema {
+    padding: 50px 25px;
+  }
+  .pagina-nosotros .nosotros-ecosistema .nosotros-ecosistema-contenido {
+    padding: 35px;
+  }
+  .pagina-nosotros .nosotros-cierre {
+    padding: 50px 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .pagina-nosotros .nosotros-presentacion {
+    padding: 65px 25px;
+  }
+  .pagina-nosotros .nosotros-presentacion h1 {
+    font-size: 42px;
+  }
+  .pagina-nosotros .nosotros-presentacion p {
+    font-size: 16px;
+  }
+  .pagina-nosotros .nosotros-especializacion {
+    padding: 55px 25px;
+  }
+  .pagina-nosotros .nosotros-especializacion .nosotros-seccion-titulo {
+    margin-bottom: 35px;
+  }
+  .pagina-nosotros .nosotros-especializacion .nosotros-seccion-titulo h2 {
+    font-size: 30px;
+  }
+  .pagina-nosotros .nosotros-especializacion .nosotros-areas {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .pagina-nosotros .nosotros-especializacion .nosotros-area {
+    padding: 25px;
+    transition: transform 0.3s ease;
+  }
+  .pagina-nosotros .nosotros-especializacion .nosotros-area:hover {
+    transform: translateY(-6px);
+  }
+  .pagina-nosotros .nosotros-metodologia {
+    padding: 65px 25px;
+  }
+  .pagina-nosotros .nosotros-metodologia .nosotros-metodologia-contenido {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .pagina-nosotros .nosotros-metodologia .nosotros-metodologia-texto {
+    margin-bottom: 0;
+  }
+  .pagina-nosotros .nosotros-metodologia .nosotros-metodologia-texto h2 {
+    font-size: 30px;
+  }
+  .pagina-nosotros .nosotros-canales {
+    padding: 65px 25px;
+  }
+  .pagina-nosotros .nosotros-canales .nosotros-seccion-titulo {
+    margin-bottom: 35px;
+  }
+  .pagina-nosotros .nosotros-canales .nosotros-seccion-titulo h2 {
+    font-size: 30px;
+  }
+  .pagina-nosotros .nosotros-canales .nosotros-canales-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .pagina-nosotros .nosotros-canales .nosotros-canal {
+    padding: 25px 18px;
+  }
+  .pagina-nosotros .nosotros-ecosistema {
+    padding: 65px 25px;
+  }
+  .pagina-nosotros .nosotros-ecosistema .nosotros-ecosistema-contenido {
+    padding: 45px;
+  }
+  .pagina-nosotros .nosotros-ecosistema h2 {
+    font-size: 30px;
+  }
+  .pagina-nosotros .nosotros-ecosistema p {
+    font-size: 15px;
+  }
+  .pagina-nosotros .nosotros-cierre {
+    padding: 65px 25px;
+  }
+  .pagina-nosotros .nosotros-cierre h2 {
+    font-size: 30px;
+  }
+  .pagina-nosotros .nosotros-cierre p {
+    font-size: 15px;
   }
 }
 

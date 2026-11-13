@@ -1,11 +1,23 @@
+
+@use "sass:color";
+@use "../utilities/variables" as v;
+
 .btn-primary {
-    background-color: #a9db29;
-    border-color: #a9db29;
-    color: #fff;
+    background-color: v.$verde-principal;
+    border-color: v.$verde-principal;
+    color: v.$blanco;
+
+    transition: all 0.3s ease;
 
     &:hover {
-        background-color: darken(#a9db29, 8%);
-        border-color: darken(#a9db29, 8%);
-        color: #0A0062;
+        background-color: color.adjust(v.$verde-principal, $lightness: -8%);
+        border-color: color.adjust(v.$verde-principal, $lightness: -8%);
+        color: v.$azul-principal;
+    }
+
+    &:focus-visible {
+        outline: 3px solid v.$azul-principal;
+        outline-offset: 3px;
+        box-shadow: none;
     }
 }

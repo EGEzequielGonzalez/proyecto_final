@@ -1,13 +1,15 @@
+
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
 .footer {
     margin-top: 30px;
-    background-color: #0A0062;
-    color: #fff;
+    background-color: v.$azul-principal;
+    color: v.$blanco;
     padding: 20px 8px;
 
     .footer-contenedor {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 8px;
+        @include m.grid(repeat(4, minmax(0, 1fr)), 8px);
     }
 
     .footer-columna {
@@ -18,13 +20,13 @@
 
         h3 {
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
         h4 {
             font-size: 13px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 5px;
         }
 
@@ -36,15 +38,11 @@
     }
 
     .footer-tucuman {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+        @include m.flex(column, null, null, 12px);
     }
 
     .footer-item {
-        display: flex;
-        align-items: center;
-        gap: 5px;
+        @include m.flex(row, null, center, 5px);
         margin-bottom: 8px;
 
         img {
@@ -56,14 +54,21 @@
     }
 
     .footer-redes {
-        display: flex;
+        @include m.flex(row, null, center, 5px);
         flex-wrap: wrap;
-        gap: 5px;
 
         img {
             width: 20px;
             height: 20px;
             object-fit: contain;
+        }
+
+        a {
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
         }
     }
 }
